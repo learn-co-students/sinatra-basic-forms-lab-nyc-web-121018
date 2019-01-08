@@ -12,7 +12,7 @@ class App < Sinatra::Base
   # end
 
 #set up controller to view form
-  get '/new' do
+  get '/new' do # from the index.erb href="/new"
   erb :create_puppy #form is in this file
   end
 
