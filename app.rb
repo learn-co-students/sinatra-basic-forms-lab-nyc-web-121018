@@ -11,24 +11,23 @@ class App < Sinatra::Base
       erb :index
     end
 
-
     # get '/index' do
     #     erb :create_puppy
     #   end
 
-      post '/new' do
+    get '/new' do
+        erb :create_puppy
+      end
+      post '/puppy' do
           erb :create_puppy
         end
 
     # sends a 200 status code
     # renders a form that can POST a name, breed, and age
 
-      # sends a 200 status code
-      #  recieves a request from /new at /puppy
-      #  displays the puppy information dynamically
       post '/puppy' do
-          @puppy = Puppy.new(params['name'], params['breed'],params['age'])
+        @puppy = Puppy.new(params['name'], params['breed'],params['age'])
           erb :display_puppy
+    
         end
-
 end
